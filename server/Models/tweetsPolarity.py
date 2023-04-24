@@ -34,6 +34,8 @@ def get_tweets(ticker):
         df = pd.read_csv(file_path)
         ticker_df = df[df["Stock Name"] == ticker]
         tweets_list = ticker_df['Tweet'].to_list()
+        # if len(tweets_list) >= 500:
+        #     tweets_list = tweets_list[:500]
         return tweets_list
 
 

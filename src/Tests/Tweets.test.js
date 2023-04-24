@@ -9,7 +9,7 @@ describe("Tweets", () => {
     const { getByText } = render(<Tweets ticker={ticker} tweets={tweets} />);
 
     // Assert that the ticker is rendered
-    expect(getByText(`RECENT TWEETS ABOUT ${ticker}`)).toBeInTheDocument();
+    expect(getByText(`Recent TWEETS about ${ticker}`)).toBeInTheDocument();
 
     // Assert that each tweet is rendered
     tweets.forEach((tweet) => {

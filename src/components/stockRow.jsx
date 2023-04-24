@@ -17,29 +17,29 @@ function StockRow(props){
     // (props.value-props.prev).toFixed(2)>0 ? td_class+=" text-green-500" : td_class+=" text-red-500"
     
 return(
-<tr class=" bg-gray-900 border-gray-700 transform hover:bg-gray-800">
-                <th  class={"px-3 py-2 font-medium text-gray-900 whitespace dark:text-white"}>
+<tr className=" bg-gray-900 border-gray-700 transform hover:bg-gray-800">
+                <th  className={"px-3 py-2 font-medium text-gray-900 whitespace dark:text-white"} data-testid="StockName">
                     {props.name}
                 </th>
-                <td class={td_class}>
+                <td className={td_class} data-testid="StockValue">
                     {(props.value).toFixed(2)}
                 </td>
-                <td class={td_class1}>
+                <td className={td_class1} data-testid="StockValueChange">
                     {(props.value-props.prev).toFixed(2)}
                 </td>
-                <td class={td_class1}>
+                <td className={td_class1} data-testid="StockValuePercentageChange">
                    {(((props.value-props.prev)/props.prev)*100).toFixed(2)}%
                 </td>
-                <td class={td_class}>
+                <td className={td_class} data-testid="StockOpen">
                     {(props.open).toFixed(2)}
                 </td>
-                <td class={td_class}>
+                <td className={td_class} data-testid="StockHigh">
                     {(props.high).toFixed(2)}
                 </td>
-                <td class={td_class}>
+                <td className={td_class} data-testid="StockLow">
                 {(props.low).toFixed(2)}
                 </td>
-                <td class={td_class}>
+                <td className={td_class} data-testid="StockPrev">
                 {(props.prev).toFixed(2)}
                 </td>
             </tr>

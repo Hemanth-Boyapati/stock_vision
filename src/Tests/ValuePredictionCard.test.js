@@ -21,17 +21,17 @@ describe("ValuePredictionCard", () => {
     const { getByText } = render(<ValuePredictionCard {...props} />);
 
     expect(
-      getByText(`TOMORROW'S ${props.ticker} CLOSING PRICE BY ARIMA`)
+      getByText(`Tomorrow's ${props.ticker} Closing price by ARIMA`)
     ).toBeInTheDocument();
     expect(
-      getByText(`TOMORROW'S ${props.ticker} CLOSING PRICE BY LSTM MODEL`)
+      getByText(`Tomorrow's ${props.ticker} Closing price by LSTM model`)
     ).toBeInTheDocument();
     expect(
-      getByText(`TOMORROW'S ${props.ticker} CLOSING PRICE BY LINEAR REGRESSION`)
+      getByText(`Tomorrow's ${props.ticker} Closing price by Linear Regression`)
     ).toBeInTheDocument();
     expect(getByText("ARIMA RMSE")).toBeInTheDocument();
-    expect(getByText("LSTM MODEL RMSE")).toBeInTheDocument();
-    expect(getByText("LINEAR REGRESSION RMSE")).toBeInTheDocument();
+    expect(getByText("LSTM model RMSE")).toBeInTheDocument();
+    expect(getByText("Linear Regression RMSE")).toBeInTheDocument();
 
     expect(getByText(props.pricePredictions.ARIMA)).toBeInTheDocument();
     expect(getByText(props.pricePredictions.LSTM)).toBeInTheDocument();

@@ -18,12 +18,12 @@ describe("TodayStockReadings", () => {
 
     // Check that the component renders the correct text
     expect(getByText("Today's stock data for AAPL")).toBeInTheDocument();
-    expect(getByText("OPEN")).toBeInTheDocument();
-    expect(getByText("HIGH")).toBeInTheDocument();
-    expect(getByText("LOW")).toBeInTheDocument();
-    expect(getByText("CLOSE")).toBeInTheDocument();
-    expect(getByText("ADJ CLOSE")).toBeInTheDocument();
-    expect(getByText("VOLUME")).toBeInTheDocument();
+    expect(getByText("Opening price")).toBeInTheDocument();
+    expect(getByText("Highest price")).toBeInTheDocument();
+    expect(getByText("Lowest price")).toBeInTheDocument();
+    expect(getByText("Closing price")).toBeInTheDocument();
+    expect(getByText("Adj Closing price")).toBeInTheDocument();
+    expect(getByText("Volume")).toBeInTheDocument();
 
     // Check that the component renders the correct data
     expect(getByText("130.32")).toBeInTheDocument();

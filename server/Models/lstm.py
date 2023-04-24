@@ -81,7 +81,7 @@ def LSTM_ALGO(df, ticker):
     regressor.compile(optimizer='adam', loss='mean_squared_error')
 
     # Training
-    regressor.fit(X_train, y_train, epochs=25, batch_size=32)
+    regressor.fit(X_train, y_train, epochs=10, batch_size=32)
     # For lstm, batch_size=power of 2
 
     # Testing

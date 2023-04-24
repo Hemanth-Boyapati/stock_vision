@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import StockRow from "./stockRow";
 
 function create_row(stock) {
-  console.log("creat_row");
+  // console.log("creat_row");
   return (
     <StockRow
+    key={stock.name}
       name={stock.name}
       value={stock.value}
       open={stock.open}
@@ -28,39 +29,39 @@ function StockTable() {
         });
       setVisible(!visible);
    }
-  }, [stockData]);
+  }, [stockData, visible]);
   //  function get_data() {
   //   }
   const th_style=" text-left 2xl:10 xl:px-8 lg:px-6 md:px-7 sm:px-7 py-3"
   return (
     <div>
         {visible && stockData.length != 0 ? (
-          <div class="flex items-stretch relative w-fit  shadow-md">
-          <table class="border-collapse overflow-y-hidden text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-left text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <div className="flex items-stretch relative w-fit  shadow-md">
+          <table className="border-collapse overflow-y-hidden text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-left text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   Name
                 </th>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   Value
                 </th>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   Change
                 </th>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   %Change
                 </th>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   Open
                 </th>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   High
                 </th>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   Low
                 </th>
-                <th scope="col" class={th_style}>
+                <th scope="col" className={th_style}>
                   Previous
                 </th>
               </tr>
@@ -71,10 +72,10 @@ function StockTable() {
         </table>
         </div>
       ) : visible && stockData.length === 0 ? (
-<></>        ) : (
+<>Unable to Show Data</>        ) : (
         <>Click to show!!</>
       )}
-{console.log(stockData)}
+{/* {console.log(stockData)} */}
       </div>
   );
 }
